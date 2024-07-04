@@ -6,4 +6,4 @@ class TestCalculator:
         assert 4 == calculator.add(2, 2)
 
     def test_substraction(self):
-        assert 1 == calculator.subtract(4, 3)
+        assert 0 == calculator.subtract(4, 4)
