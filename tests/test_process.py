@@ -1,4 +1,4 @@
-from test_cicd.src.preprocess import Loader
+from src.preprocess import Loader
 
 class TestPreprocess:
 

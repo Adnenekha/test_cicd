@@ -1,4 +1,4 @@
-import test_cicd.src.calculator as calculator
+import src.calculator as calculator
 
 class TestCalculator:
 
