@@ -54,7 +54,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Set up Python 3.8.12
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v1 
       with:
         python-version: 3.11
     - name: Install dependencies
