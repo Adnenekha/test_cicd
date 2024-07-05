@@ -65,7 +65,7 @@ jobs:
         make test
     - name: docker build
       run: |
-        docker build -t lasse1990/hello_world_test:0.0.1 .
+        docker build -t lasse1990/hello_world_test:0.0.1 
     - name: docker push
       run: |
         docker push lasse1990/hello_world_test:0.0.1
