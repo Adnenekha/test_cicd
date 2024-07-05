@@ -1,4 +1,6 @@
-import src.calculator as calculator
+import sys
+sys.path.insert(0, '../')
+from src import calculator
 
 class TestCalculator:
 
