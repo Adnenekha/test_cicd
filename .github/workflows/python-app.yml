@@ -41,20 +41,16 @@
 #         make test
 
 name: Docker build and push
+
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: docker login
-      env:
-        DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Set up Python 3.8.12
-      uses: actions/setup-python@v1 
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
       with:
         python-version: 3.11
     - name: Install dependencies
@@ -63,6 +59,12 @@ jobs:
     - name: Test
       run: |
         make test
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
     - name: docker build
       run: |
         docker build -t lasse1990/hello_world_test:0.0.1 .
