@@ -1,11 +1,9 @@
-import sys
-sys.path.insert(0, '../')
-from src import calculator
+from src.calculator import add, subtract
 
 class TestCalculator:
 
     def test_addition(self):
-        assert 4 == calculator.add(2, 2)
+        assert 4 == add(2, 2)
 
     def test_substraction(self):
-        assert 0 == calculator.subtract(4, 4)
+        assert 0 == subtract(4, 4)
