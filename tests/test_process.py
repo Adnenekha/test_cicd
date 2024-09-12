@@ -15,6 +15,12 @@ def test_round_down_lesser_half(value, key):
     assert result == key - 1
 
 
+@pytest.mark.parametrize('value, key', [(2,3),(3,4)], )   
+def test_round_down_lesser_half(value, key):
+    result = value
+    assert result == key - 1
+
+
 
 @pytest.fixture
 def first_fixture():
